@@ -1,6 +1,10 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthenticationContext } from "../../App";
 import CameraFeed from "../../component/camera-feed";
+import {
+  COLLECTION_NAME,
+  FACE_MATCH_THRESHOLD,
+} from "../../interfaces/rekognition";
 import { rekognition } from "../../services/aws";
 
 const styles = {
@@ -16,9 +20,6 @@ const styles = {
     fontStyle: "italic",
   },
 };
-
-const COLLECTION_NAME = "face-recognition";
-const FACE_MATCH_THRESHOLD = 98;
 
 const Login: React.FC = () => {
   const { loggedIn, setLoggedIn, setUser } = useContext(AuthenticationContext);
